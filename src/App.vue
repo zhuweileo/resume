@@ -11,19 +11,17 @@
 </template>
 
 <script>
-  import "./assets/reset.css"
-  import 'normalize.css/normalize.css'
-  import Topbar from './components/Topbar.vue'
-  import ResumeEditor from './components/ResumeEditor.vue'
-  import ResumePreview from './components/ResumePreview.vue'
-  import icons from './assets/icons'
+import "./assets/reset.css"
+import 'normalize.css/normalize.css'
+import Topbar from './components/Topbar.vue'
+import ResumeEditor from './components/ResumeEditor.vue'
+import ResumePreview from './components/ResumePreview.vue'
+import icons from './assets/icons'
+import store from './store/index'
+
 export default {
   name: 'app',
-  data () {
-    return {
-      text: '很好'
-    }
-  },
+  store,
   components: {Topbar,ResumeEditor,ResumePreview},
   created(){
       document.body.insertAdjacentHTML("afterbegin",icons);
