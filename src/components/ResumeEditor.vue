@@ -2,29 +2,50 @@
   <div id="resumeEditor">
     <nav>
       <ol>
-        <li class="active">7</li>
-        <li>1</li>
-        <li>2</li>
-        <li>3</li>
-        <li>4</li>
-        <li>5</li>
-        <li>6</li>
+       <li v-for="(item,index) in resume.config"
+           :class="{active:item.pro === selected}"
+           @click="selected=item.pro">
+         <svg class="icon">
+           <use :xlink:href="`#icon-${item.icon}`"></use>
+         </svg>
+       </li>
       </ol>
     </nav>
     <ol class="panels">
-      <li>1</li>
-      <li>2</li>
-      <li>3</li>
-      <li>4</li>
-      <li>5</li>
-      <li>6</li>
-      <li>7</li>
+      <li v-for="item in resume.config" v-show="selected===item.pro">
+        {{resume[item.pro]}}
+      </li>
     </ol>
   </div>
 </template>
 <script>
   export default{
-      name:'ResumeEditor'
+      name:'ResumeEditor',
+      data(){
+        return {
+            selected:"profile",
+            resume:{
+                config:[
+                  {pro:'profile',icon:'id'},
+                  {pro:'work history',icon: 'work'},
+                  {pro:'education',icon:'book'},
+                  {pro:'prjects',icon:'heart'},
+                  {pro:'awards',icon:'cup'},
+                  {pro:'contacts',icon:'phone'}
+                ],
+                profile:{
+                    name:'',
+                    city:'',
+                    title:''
+                },
+                'work history':["1"],
+                education:["2"],
+                projects:["3"],
+                awards:[],
+                contacts:[],
+            }
+          }
+      }
   }
 </script>
 <style lang="scss">
@@ -39,6 +60,7 @@
     width:35%;
     display:flex;
     flex-direction:row;
+    overflow:auto;
     nav {
       background: #000;
       width: 80px;
@@ -49,10 +71,16 @@
         justify-content: center;
         align-items: center;
         margin: 16px 0;
+        cursor: pointer;
         &.active {
           background: white;
           color: black;
         }
+          svg.icon{
+            width:24px;
+            height:24px;
+            fill:currentcolor;
+          }
       }
     }
   }

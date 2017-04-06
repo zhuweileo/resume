@@ -16,6 +16,7 @@
   import Topbar from './components/Topbar.vue'
   import ResumeEditor from './components/ResumeEditor.vue'
   import ResumePreview from './components/ResumePreview.vue'
+  import icons from './assets/icons'
 export default {
   name: 'app',
   data () {
@@ -23,7 +24,10 @@ export default {
       text: '很好'
     }
   },
-  components: {Topbar,ResumeEditor,ResumePreview}
+  components: {Topbar,ResumeEditor,ResumePreview},
+  created(){
+      document.body.insertAdjacentHTML("afterbegin",icons);
+  }
 }
 </script>
 
@@ -50,4 +54,5 @@ export default {
     align-self:center;
     padding:0 16px;
   }
+
 </style>
