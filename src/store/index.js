@@ -18,10 +18,14 @@ export default new Vuex.Store({
       profile:{
         name:'朱维',
         city:'鹤壁',
-        title:'简历'
+        title:'简历',
+        birthday:'1993-01-01'
       },
       'work history':[
-        {company:'百度',content:'第一份'},
+        {company:'百度',content:`第一份dsajfkadfaldfjadjfkdjf
+        1.dkjfkasjd
+        2.asdfadfas
+        3.dfadadf`},
         {company:'ali',content:'第二份'},
         {company:'tecent',content:'第三份'}
       ],
@@ -31,9 +35,9 @@ export default new Vuex.Store({
         {school:'五小',content:'2011-2014'}
       ],
       projects:[
-        {pro:'music',discr:'音乐播放器'},
-        {pro:'todoList',discr:'todolist应用'},
-        {pro:'resume',discr:'在线简历制作'}
+        {pro:'music',content:'音乐播放器'},
+        {pro:'todoList',content:'todolist应用'},
+        {pro:'resume',content:'在线简历制作'}
       ],
       awards:[
         {name:'三好学生',content:''},
