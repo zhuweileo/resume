@@ -13,22 +13,24 @@
     </nav>
     <ol class="panels">
       <li v-for="item in resume.config" v-show="selected===item.pro">
-        <div v-if="resume[item.pro] instanceof Array">
+        <!--<div v-if="resume[item.pro] instanceof Array">-->
           <div class="subitem" v-for="(subitem,index) in resume[item.pro]">
             <div class="resumePro" v-for="(value,key) in subitem">
               <label :for="item.pro+index+'-'+key">{{key}}</label>
-              <input type="text" :value="value" :id="item.pro+index+'-'+key">
+              <input type="text" :value="value" :id="item.pro+index+'-'+key"
+              @input="edit(item.pro,index,key,$event.target.value)"
+              >
             </div>
           </div>
-        </div>
-        <div class="subitem" v-else v-for="(value,key) in resume[item.pro]">
-          <div class="resumePro">
-            <label :for="key">
-              {{key}}
-            </label>
-            <input type="text" :value="value" :id="key">
-          </div>
-        </div>
+        <!--</div>-->
+        <!--<div class="subitem" v-else v-for="(value,key) in resume[item.pro]">-->
+          <!--<div class="resumePro">-->
+            <!--<label :for="key">-->
+              <!--{{key}}-->
+            <!--</label>-->
+            <!--<input type="text" :value="value" :id="key" @input="edit(item.pro,key,$event.target.value)">-->
+          <!--</div>-->
+        <!--</div>-->
       </li>
     </ol>
   </div>
@@ -49,6 +51,16 @@
               return this.$store.state.resume
           }
       },
+      methods:{
+          edit(pro,index,key,value){
+              this.$store.commit("writeResume",{
+                  pro:pro,
+                  index:index,
+                  key:key,
+                  value:value
+              })
+          }
+      }
   }
 </script>
 <style lang="scss">
@@ -65,8 +77,10 @@
     overflow:auto;
     nav {
       background: #000;
-      width: 80px;
-        > ol > li {
+      width:80px;
+      min-height:670px;
+      > ol > li{
+        /*width:80px;*/
         height: 48px;
         color: white;
         display: flex;
@@ -86,6 +100,8 @@
       }
     }
     .panels{
+      /*background:orange;*/
+      min-height:670px;
       .subitem:nth-child(1){
         margin-top:24px;
       }

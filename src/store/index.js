@@ -15,12 +15,15 @@ export default new Vuex.Store({
         {pro:'awards',icon:'#icon-cup'},
         {pro:'contacts',icon:'#icon-phone'}
       ],
-      profile:{
-        name:'朱维',
-        city:'鹤壁',
-        title:'简历',
-        birthday:'1993-01-01'
-      },
+      // profile:{
+      //   name:'朱维',
+      //   city:'鹤壁',
+      //   title:'简历',
+      //   birthday:'1993-01-01'
+      // },
+      profile:[
+        {name:'朱维',city:'鹤壁',title:'前端工程师',birthday:'1993-01-01'}
+      ],
       'work history':[
         {company:'百度',content:`第一份dsajfkadfaldfjadjfkdjf
         1.dkjfkasjd
@@ -54,6 +57,9 @@ export default new Vuex.Store({
   mutations: {
     switchTab(state,payload){
       state.selected = payload;
+    },
+    writeResume(state,payload){
+      state.resume[payload.pro][payload.index][payload.key] = payload.value;
     }
   }
 })
