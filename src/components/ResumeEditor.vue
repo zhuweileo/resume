@@ -13,24 +13,14 @@
     </nav>
     <ol class="panels">
       <li v-for="item in resume.config" v-show="selected===item.pro">
-        <!--<div v-if="resume[item.pro] instanceof Array">-->
           <div class="subitem" v-for="(subitem,index) in resume[item.pro]">
             <div class="resumePro" v-for="(value,key) in subitem">
-              <label :for="item.pro+index+'-'+key">{{key}}</label>
+              <label :for="item.pro+index+'-'+key" v-if="key==='name'">{{value}}</label>
               <input type="text" :value="value" :id="item.pro+index+'-'+key"
-              @input="edit(item.pro,index,key,$event.target.value)"
+              @input="edit(item.pro,index,key,$event.target.value)" v-if="key==='content'"
               >
             </div>
           </div>
-        <!--</div>-->
-        <!--<div class="subitem" v-else v-for="(value,key) in resume[item.pro]">-->
-          <!--<div class="resumePro">-->
-            <!--<label :for="key">-->
-              <!--{{key}}-->
-            <!--</label>-->
-            <!--<input type="text" :value="value" :id="key" @input="edit(item.pro,key,$event.target.value)">-->
-          <!--</div>-->
-        <!--</div>-->
       </li>
     </ol>
   </div>
@@ -105,12 +95,17 @@
       .subitem:nth-child(1){
         margin-top:24px;
       }
+      .subitem:nth-child(2n+0){
+        border-bottom:1px solid #000;
+        padding-bottom:10px;
+      }
       .resumePro{
         display:flex;
         flex-direction:column;
         margin-left:24px;
         margin-right:24px;
         /*margin-bottom:16px;*/
+
         label{
           font-size:20px;
           color:#333333;
