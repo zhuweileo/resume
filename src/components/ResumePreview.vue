@@ -11,18 +11,18 @@
     <section data-name="work history" v-show="resume['work history']">
       <h2>工作经历</h2>
       <ol>
-        <li v-for="item in resume['work history']">
-          <h3>{{item.company}}</h3>
-          <p>{{item.content}}</p>
+        <li v-for="n in resume['work history'].length/2">
+          <h3>{{resume['work history'][2*n-2].content}}</h3>
+          <p>{{resume['work history'][2*n-1].content}}</p>
         </li>
       </ol>
     </section>
     <section data-name="education" v-show="resume.education">
       <h2>毕业院校</h2>
       <ol>
-        <li v-for="item in resume.education">
-          <h3>{{item.school}}
-            <span v-show="item.content"> - {{item.content}}</span>
+        <li v-for="n in resume.education.length/2">
+          <h3>{{resume.education[2*n-2].content}}
+            <span v-show="resume.education[2*n-1].content"> - {{resume.education[2*n-1].content}}</span>
           </h3>
         </li>
       </ol>
@@ -30,27 +30,27 @@
     <section data-name="projects" v-show="resume.projects">
       <h2>项目经历</h2>
       <ol>
-        <li v-for="item in resume.projects">
-          <h3>{{item.pro}}</h3>
-          <p>{{item.content}}</p>
+        <li v-for="n in resume.projects.length/2">
+          <h3>{{resume.projects[2*n-2].content}}</h3>
+          <p>{{resume.projects[2*n-1].content}}</p>
         </li>
       </ol>
     </section>
     <section data-name="awards" v-show="resume.awards">
       <h2>获奖情况</h2>
       <ol>
-        <li v-for="item in resume.awards">
-          <h3>{{item.name}}</h3>
-          <p>{{item.content}}</p>
+        <li v-for="n in resume.awards.length/2">
+          <h3>{{resume.awards[2*n-2].content}}</h3>
+          <p>{{resume.awards[2*n-1].content}}</p>
         </li>
       </ol>
     </section>
     <section data-name="contacts" v-show="resume.contacts">
       <h2>联系方式</h2>
       <table>
-        <tr v-for="item in resume.contacts">
-          <td>{{item.contact}}</td>
-          <td>{{item.content}}</td>
+        <tr v-for="n in resume.contacts.length/2">
+          <td>{{resume.contacts[2*n-2].content}}</td>
+          <td>{{resume.contacts[2*n-1].content}}</td>
         </tr>
       </table>
     </section>

@@ -14,26 +14,13 @@ export default new Vuex.Store({
         {pro:'awards',icon:'#icon-cup'},
         {pro:'contacts',icon:'#icon-phone'}
       ],
-      // profile:{
-      //   name:'朱维',
-      //   city:'鹤壁',
-      //   title:'简历',
-      //   birthday:'1993-01-01'
-      // },
       profile:[
-        // {姓名:'朱维',城市:'鹤壁',职位:'前端工程师', 生日:'1993-01-01'}
         {name:"姓名",content:"朱维"},
         {name:"职位",content:"前端工程师"},
         {name:"城市",content:"鹤壁"},
         {name:"生日",content:"1993-01-01"}
       ],
       'work history':[
-        // {company:'百度',content:`第一份dsajfkadfaldfjadjfkdjf
-        // 1.dkjfkasjd
-        // 2.asdfadfas
-        // 3.dfadadf`},
-        // {company:'ali',content:'第二份'},
-        // {company:'tecent',content:'第三份'}
         {name:"公司",content:"百度"},
         {name:"简介",content:"我的第一份工作"},
         {name:"公司",content:"阿里"},
