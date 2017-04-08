@@ -14,9 +14,11 @@
     <ol class="panels">
       <li v-for="item in resume.config" v-show="selected===item.pro">
           <div class="subitem" v-for="(subitem,index) in resume[item.pro]">
-              <label :for="item.pro+index">{{subitem.name}}</label>
-              <input type="text" :value="subitem.content" :id="item.pro+index"
-              @input="edit(item.pro,index,$event.target.value)"/>
+            <div class="labInp" v-for="(cell,index1) in subitem">
+              <label :for="item.pro+index+index1">{{cell.name}}</label>
+              <input type="text" :value="cell.content" :id="item.pro+index+index1"
+              @input="edit(item.pro,index,index1,$event.target.value)"/>
+            </div>
           </div>
       </li>
     </ol>
@@ -39,10 +41,11 @@
           }
       },
       methods:{
-          edit(pro,index,value){
+          edit(pro,index,index1,value){
               this.$store.commit("writeResume",{
                   pro:pro,
                   index:index,
+                  index1:index1,
                   value:value
               })
           }
@@ -93,7 +96,7 @@
           margin-top:24px;
         }
 
-        .subitem{
+        .labInp{
           display:flex;
           flex-direction:column;
           margin-left:24px;
@@ -117,7 +120,7 @@
         }
       }
       li:nth-child(n+2){
-        .subitem:nth-child(2n+0){
+        .subitem{
           border-bottom:1px solid #ccc;
           padding-bottom:10px;
         }
