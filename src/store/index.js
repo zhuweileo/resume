@@ -42,23 +42,32 @@ export default new Vuex.Store({
         {name:"简介",content:"我的第三份工作"},
       ],
       education:[
-        {school:'齐大',content:'2011-2014'},
-        {school:'四中',content:'2011-2014'},
-        {school:'五小',content:'2011-2014'}
+        {name:'学校',content:'齐大'},
+        {name:'时间',content:'2011-2014'},
+        {name:'学校',content:'铃兰一中'},
+        {name:'时间',content:'2011-2014'},
+        {name:'学校',content:'乖宝宝小学'},
+        {name:'时间',content:'2011-2014'}
       ],
       projects:[
-        {pro:'music',content:'音乐播放器'},
-        {pro:'todoList',content:'todolist应用'},
-        {pro:'resume',content:'在线简历制作'}
+        {name:'项目名称',content:'音乐播放器'},
+        {name:'项目介绍',content:'广场舞助手'},
+        {name:'项目名称',content:'todoList'},
+        {name:'项目介绍',content:'可以记录你的要做的事情哦！'},
+        {name:'项目名称',content:'简历生成器'},
+        {name:'项目介绍',content:'可以制作简历哦'},
       ],
       awards:[
-        {name:'三好学生',content:''},
-        {name:'优秀毕业生',content:''},
-        {name:'优秀班干部',content:''}
+        {name:'奖项名称',content:'最会装逼奖'},
+        {name:'奖项介绍',content:'多次装逼后自动添加'},
+        {name:'奖项名称',content:'把妹高手'},
+        {name:'奖项介绍',content:'成功调戏班花'},
       ],
       contacts:[
-        {contact:'phone',content:'130222222'},
-        {contact:'qq',content:'576XXXXXXX'}
+        {name:'联系方式',content:'qq'},
+        {name:'号码',content:'576XXXXXXX'},
+        {name:'联系方式',content:'电话'},
+        {name:'号码',content:'126XXXXXXX'}
       ]
     }
 

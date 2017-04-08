@@ -14,12 +14,9 @@
     <ol class="panels">
       <li v-for="item in resume.config" v-show="selected===item.pro">
           <div class="subitem" v-for="(subitem,index) in resume[item.pro]">
-            <div class="resumePro" v-for="(value,key) in subitem">
-              <label :for="item.pro+index+'-'+key" v-if="key==='name'">{{value}}</label>
-              <input type="text" :value="value" :id="item.pro+index+'-'+key"
-              @input="edit(item.pro,index,key,$event.target.value)" v-if="key==='content'"
-              >
-            </div>
+              <label :for="item.pro+index">{{subitem.name}}</label>
+              <input type="text" :value="subitem.content" :id="item.pro+index"
+              @input="edit(item.pro,index,key,$event.target.value)"/>
           </div>
       </li>
     </ol>
@@ -92,33 +89,38 @@
     .panels{
       /*background:orange;*/
       min-height:670px;
-      .subitem:nth-child(1){
-        margin-top:24px;
-      }
-      .subitem:nth-child(2n+0){
-        border-bottom:1px solid #000;
-        padding-bottom:10px;
-      }
-      .resumePro{
-        display:flex;
-        flex-direction:column;
-        margin-left:24px;
-        margin-right:24px;
-        /*margin-bottom:16px;*/
-
-        label{
-          font-size:20px;
-          color:#333333;
-          letter-spacing:0;
-          padding:16px 0;
+      li{
+        .subitem:nth-child(1){
+          margin-top:24px;
         }
-        input{
-          background:#ffffff;
-          border:1px solid #dddddd;
-          box-shadow:inset 0 1px 3px 0 rgba(0,0,0,0.25);
-          width:374px;
-          height:38px;
-          font-size:20px;
+
+        .subitem{
+          display:flex;
+          flex-direction:column;
+          margin-left:24px;
+          margin-right:24px;
+          /*margin-bottom:16px;*/
+
+          label{
+            font-size:20px;
+            color:#333333;
+            letter-spacing:0;
+            padding:16px 0;
+          }
+          input{
+            background:#ffffff;
+            border:1px solid #dddddd;
+            box-shadow:inset 0 1px 3px 0 rgba(0,0,0,0.25);
+            width:374px;
+            height:38px;
+            font-size:20px;
+          }
+        }
+      }
+      li:nth-child(n+2){
+        .subitem:nth-child(2n+0){
+          border-bottom:1px solid #ccc;
+          padding-bottom:10px;
         }
       }
     }

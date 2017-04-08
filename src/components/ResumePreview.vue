@@ -1,11 +1,11 @@
 <template>
   <div id="resumePreview">
     <section data-name="profile" v-show="resume.profile">
-      <h1>{{resume.profile[0].name}}</h1>
-      <h2>{{resume.profile[0].title}}</h2>
+      <h1>{{resume.profile[0].content}}</h1>
+      <h2>{{resume.profile[1].content}}</h2>
       <p>
-        <small>{{resume.profile[0].city}}</small>
-        <small>{{resume.profile[0].birthday}}</small>
+        <small>{{resume.profile[2].content}}</small>
+        <small>{{resume.profile[3].content}}</small>
       </p>
     </section>
     <section data-name="work history" v-show="resume['work history']">
