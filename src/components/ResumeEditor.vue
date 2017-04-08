@@ -64,10 +64,10 @@
     display:flex;
     flex-direction:row;
     overflow:auto;
-    nav {
+    nav{
       background: #000;
       /*width:80px;*/
-      min-height:670px;
+      min-height:610px;
       > ol > li{
         width:80px;
         height: 48px;
@@ -90,11 +90,11 @@
     }
     .panels{
       /*background:orange;*/
-      min-height:670px;
+      min-height:610px;
       flex-grow:1;
       display:flex;
       justify-content: center;
-      min-width:406px;
+      min-width:386px;
       li{
         .subitem:nth-child(1){
           margin-top:24px;
@@ -117,7 +117,7 @@
             background:#ffffff;
             border:1px solid #dddddd;
             box-shadow:inset 0 1px 3px 0 rgba(0,0,0,0.25);
-            width:374px;
+            width:354px;
             height:38px;
             font-size:20px;
           }
