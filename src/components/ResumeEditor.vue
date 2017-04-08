@@ -66,10 +66,10 @@
     overflow:auto;
     nav {
       background: #000;
-      width:80px;
+      /*width:80px;*/
       min-height:670px;
       > ol > li{
-        /*width:80px;*/
+        width:80px;
         height: 48px;
         color: white;
         display: flex;
@@ -91,16 +91,20 @@
     .panels{
       /*background:orange;*/
       min-height:670px;
+      flex-grow:1;
+      display:flex;
+      justify-content: center;
+      min-width:406px;
       li{
         .subitem:nth-child(1){
           margin-top:24px;
         }
-
         .labInp{
           display:flex;
           flex-direction:column;
-          margin-left:24px;
-          margin-right:24px;
+          justify-content: space-between;
+          /*margin-left:24px;*/
+          /*margin-right:24px;*/
           /*margin-bottom:16px;*/
 
           label{
