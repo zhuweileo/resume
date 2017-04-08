@@ -16,7 +16,7 @@
           <div class="subitem" v-for="(subitem,index) in resume[item.pro]">
               <label :for="item.pro+index">{{subitem.name}}</label>
               <input type="text" :value="subitem.content" :id="item.pro+index"
-              @input="edit(item.pro,index,key,$event.target.value)"/>
+              @input="edit(item.pro,index,$event.target.value)"/>
           </div>
       </li>
     </ol>
@@ -39,11 +39,10 @@
           }
       },
       methods:{
-          edit(pro,index,key,value){
+          edit(pro,index,value){
               this.$store.commit("writeResume",{
                   pro:pro,
                   index:index,
-                  key:key,
                   value:value
               })
           }

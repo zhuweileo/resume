@@ -64,7 +64,7 @@ export default new Vuex.Store({
       state.selected = payload;
     },
     writeResume(state,payload){
-      state.resume[payload.pro][payload.index][payload.key] = payload.value;
+      state.resume[payload.pro][payload.index].content = payload.value;
     }
   }
 })
