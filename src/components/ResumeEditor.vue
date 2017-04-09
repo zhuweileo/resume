@@ -67,7 +67,7 @@
     nav{
       background: #000;
       /*width:80px;*/
-      min-height:610px;
+      min-height:600px;
       > ol > li{
         width:80px;
         height: 48px;
