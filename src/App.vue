@@ -47,6 +47,7 @@ export default {
     flex-direction:row;
     justify-content: space-around;
     /*margin:0 16px;*/
+    margin-top:16px;
     margin-bottom:16px;
     width:100%;
     align-self:center;
