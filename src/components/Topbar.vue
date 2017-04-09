@@ -1,8 +1,10 @@
 <template>
   <div id="topbar">
-    <div class="wrapper"><span class="logo">Resume</span></div>
-    <div class="actions">
-      <button class="primary">保存</button><button>预览</button>
+    <div class="wrapper">
+      <span class="logo">Resumer</span>
+      <div class="actions">
+        <button class="primary">保存</button><button>预览</button>
+      </div>
     </div>
   </div>
 </template>
@@ -13,18 +15,17 @@
 </script>
 <style scoped lang="scss">
   #topbar{
-    color:greenyellow;
-    height:64px;
     background: #fff;
     box-shadow:0 1px 3px 0 rgba(0,0,0,0.25);
-    margin-bottom:14px;
-    padding-left:16px;
-    padding-right:16px;
-    display:flex;
-    flex-direction:row;
-    align-items:center;
-    justify-content:space-between;
-
+    .wrapper{
+      height:64px;
+      padding-left:16px;
+      padding-right:16px;
+      display:flex;
+      flex-direction:row;
+      align-items:center;
+      justify-content:space-between;
+    }
      .logo{
         font-size:24px;
         color:#000;
