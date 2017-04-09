@@ -90,15 +90,16 @@
     }
     .panels{
       /*background:orange;*/
-      min-height:610px;
+      /*min-height:610px;*/
       flex-grow:1;
       /*display:flex;*/
       /*justify-content: center;*/
       /*min-width:386px;*/
       li{
-        .subitem:nth-child(1){
-          margin-top:24px;
-        }
+        /*.subitem:nth-child(1){*/
+          /*margin-top:24px;*/
+        /*}*/
+        margin:8px 24px;
         .labInp{
           /*display:flex;*/
           /*flex-direction:column;*/
