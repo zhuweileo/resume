@@ -100,14 +100,15 @@
           margin-top:24px;
         }
         .labInp{
-          display:flex;
-          flex-direction:column;
-          justify-content: space-between;
+          /*display:flex;*/
+          /*flex-direction:column;*/
+          /*justify-content: space-between;*/
           /*margin-left:24px;*/
           /*margin-right:24px;*/
           /*margin-bottom:16px;*/
 
           label{
+            display:block;
             font-size:20px;
             color:#333333;
             letter-spacing:0;
@@ -117,7 +118,7 @@
             background:#ffffff;
             border:1px solid #dddddd;
             box-shadow:inset 0 1px 3px 0 rgba(0,0,0,0.25);
-            width:354px;
+            width:100%;
             height:38px;
             font-size:20px;
           }
