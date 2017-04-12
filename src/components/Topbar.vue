@@ -3,9 +3,10 @@
     <div class="wrapper">
       <span class="logo">Resumer</span>
       <div class="actions">
+        <span>{{user.username}}</span>
         <a href="#" class="button primary" @click.prevent="signUpDialogVisible=true">注册</a>
         <MyDialog title="注册" :visible="signUpDialogVisible" @close="signUpDialogVisible=false">
-          我是slote内容
+          <SignUpForm @success="login($event)"/>
         </MyDialog>
         <a href="#" class="button">登录</a>
       </div>
@@ -14,6 +15,7 @@
 </template>
 <script>
   import MyDialog from "./MyDialog.vue"
+  import SignUpForm from "./SignUpForm.vue"
   export default {
       name:'topbar',
       data(){
@@ -21,8 +23,19 @@
               signUpDialogVisible:false
           }
       },
+      computed:{
+          user(){
+            return this.$store.state.user
+          }
+      },
       components:{
-          MyDialog
+          MyDialog,SignUpForm
+      },
+      methods:{
+          login(user){
+              this.signUpDialogVisible = false;
+              this.$store.commit("setUser",user)
+          }
       }
   }
 </script>

@@ -5,6 +5,10 @@ Vue.use(Vuex)
 export default new Vuex.Store({
   state: {
     selected:"profile",
+    user:{
+      username:"",
+      id:""
+    },
     resume:{
       config:[
         {pro:'profile',icon:'#icon-id'},
@@ -70,6 +74,10 @@ export default new Vuex.Store({
     writeResume(state,payload){
       state.resume[payload.pro][payload.index][payload.index1].content = payload.value;
       localStorage.setItem("state",JSON.stringify(state))
+    },
+    setUser(state,payload){
+      Object.assign(state.user,payload)
+      console.log(state.user)
     }
   }
 })
