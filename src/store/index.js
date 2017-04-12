@@ -60,11 +60,16 @@ export default new Vuex.Store({
 
   },
   mutations: {
+    initState(state,payload){
+      Object.assign(state,payload)
+    },
     switchTab(state,payload){
       state.selected = payload;
+      localStorage.setItem("state",JSON.stringify(state))
     },
     writeResume(state,payload){
       state.resume[payload.pro][payload.index][payload.index1].content = payload.value;
+      localStorage.setItem("state",JSON.stringify(state))
     }
   }
 })
