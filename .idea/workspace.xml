@@ -21,10 +21,10 @@
       <file leaf-file-name="Topbar.vue" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/components/Topbar.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="288">
-              <caret line="9" column="32" lean-forward="true" selection-start-line="9" selection-start-column="32" selection-end-line="9" selection-end-column="32" />
+            <state relative-caret-position="-118">
+              <caret line="36" column="31" lean-forward="false" selection-start-line="36" selection-start-column="31" selection-end-line="36" selection-end-column="31" />
               <folding>
-                <element signature="e#691#728#0" expanded="true" />
+                <element signature="e#715#752#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -102,8 +102,8 @@
       <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/store/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="456">
-              <caret line="79" column="58" lean-forward="true" selection-start-line="79" selection-start-column="58" selection-end-line="79" selection-end-column="58" />
+            <state relative-caret-position="384">
+              <caret line="82" column="6" lean-forward="false" selection-start-line="82" selection-start-column="6" selection-end-line="82" selection-end-column="6" />
               <folding>
                 <element signature="e#0#21#0" expanded="true" />
               </folding>
@@ -141,8 +141,8 @@
         <option value="$PROJECT_DIR$/src/lib/leancloud.js" />
         <option value="$PROJECT_DIR$/src/components/SignUpForm.vue" />
         <option value="$PROJECT_DIR$/src/lib/getErrorMessage.js" />
-        <option value="$PROJECT_DIR$/src/store/index.js" />
         <option value="$PROJECT_DIR$/src/components/Topbar.vue" />
+        <option value="$PROJECT_DIR$/src/store/index.js" />
       </list>
     </option>
   </component>
@@ -372,12 +372,12 @@
       <workItem from="1491735891973" duration="1665000" />
       <workItem from="1491738631821" duration="155000" />
       <workItem from="1491964869736" duration="20517000" />
-      <workItem from="1492045078757" duration="8441000" />
+      <workItem from="1492045078757" duration="10458000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="148410000" />
+    <option name="totallyTimeSpent" value="150427000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -469,7 +469,7 @@
         <state relative-caret-position="1344">
           <caret line="42" column="22" lean-forward="false" selection-start-line="42" selection-start-column="22" selection-end-line="42" selection-end-column="22" />
           <folding>
-            <element signature="e#691#728#0" expanded="true" />
+            <element signature="e#715#752#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -527,7 +527,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#691#728#0" expanded="true" />
+            <element signature="e#715#752#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -584,7 +584,7 @@
         <state relative-caret-position="416">
           <caret line="13" column="14" lean-forward="true" selection-start-line="13" selection-start-column="14" selection-end-line="13" selection-end-column="14" />
           <folding>
-            <element signature="e#691#728#0" expanded="true" />
+            <element signature="e#715#752#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -796,6 +796,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/lib/getErrorMessage.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="96">
+          <caret line="5" column="14" lean-forward="false" selection-start-line="5" selection-start-column="14" selection-end-line="5" selection-end-column="14" />
+          <folding>
+            <element signature="e#0#37#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/App.vue">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="352">
@@ -808,30 +818,20 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/store/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="456">
-          <caret line="79" column="58" lean-forward="true" selection-start-line="79" selection-start-column="58" selection-end-line="79" selection-end-column="58" />
+        <state relative-caret-position="384">
+          <caret line="82" column="6" lean-forward="false" selection-start-line="82" selection-start-column="6" selection-end-line="82" selection-end-column="6" />
           <folding>
             <element signature="e#0#21#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/lib/getErrorMessage.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="96">
-          <caret line="5" column="14" lean-forward="false" selection-start-line="5" selection-start-column="14" selection-end-line="5" selection-end-column="14" />
-          <folding>
-            <element signature="e#0#37#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/Topbar.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="9" column="32" lean-forward="true" selection-start-line="9" selection-start-column="32" selection-end-line="9" selection-end-column="32" />
+        <state relative-caret-position="-118">
+          <caret line="36" column="31" lean-forward="false" selection-start-line="36" selection-start-column="31" selection-end-line="36" selection-end-column="31" />
           <folding>
-            <element signature="e#691#728#0" expanded="true" />
+            <element signature="e#715#752#0" expanded="true" />
           </folding>
         </state>
       </provider>

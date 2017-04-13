@@ -78,7 +78,10 @@ export default new Vuex.Store({
     setUser(state,payload){
       Object.assign(state.user,payload)
       localStorage.setItem("state",JSON.stringify(state));
-      console.log(state.user)
+    },
+    clearUser(state){
+      state.user.id=null;
+      localStorage.setItem("state",JSON.stringify(state));
     }
   }
 })
