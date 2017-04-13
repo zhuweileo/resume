@@ -12,7 +12,10 @@
           <MyDialog title="注册" :visible="signUpDialogVisible" @close="signUpDialogVisible=false">
             <SignUpForm @success="login"/>
           </MyDialog>
-          <a href="#" class="button">登录</a>
+          <a href="#" class="button" @click.prevent="loginDialogVisible=true">登录</a>
+          <MyDialog title="登录" :visible="loginDialogVisible" @close="loginDialogVisible=false">
+            <LoginForm/>
+          </MyDialog>
         </div>
       </div>
     </div>
@@ -21,12 +24,14 @@
 <script>
   import MyDialog from "./MyDialog.vue"
   import SignUpForm from "./SignUpForm.vue"
+  import LoginForm from "./LoginForm.vue"
   import AV from "../lib/leancloud"
   export default {
       name:'topbar',
       data(){
           return{
-              signUpDialogVisible:false
+              signUpDialogVisible:false,
+              loginDialogVisible:false
           }
       },
       computed:{
@@ -38,12 +43,10 @@
           }
       },
       components:{
-          MyDialog,SignUpForm
+          MyDialog,SignUpForm,LoginForm
       },
       methods:{
           login(user){
-              console.log("woshi");
-              console.log(user);
               this.signUpDialogVisible = false;
               this.$store.commit("setUser",user)
           },
