@@ -9,14 +9,14 @@
         </div>
         <div v-else class="useractions">
           <a href="#" class="button primary" @click.prevent="signUpDialogVisible=true">注册</a>
-          <MyDialog title="注册" :visible="signUpDialogVisible" @close="signUpDialogVisible=false">
-            <SignUpForm @success="login"/>
-          </MyDialog>
           <a href="#" class="button" @click.prevent="loginDialogVisible=true">登录</a>
-          <MyDialog title="登录" :visible="loginDialogVisible" @close="loginDialogVisible=false">
-            <LoginForm/>
-          </MyDialog>
         </div>
+        <MyDialog title="注册" :visible="signUpDialogVisible" @close="signUpDialogVisible=false">
+          <SignUpForm @success="login"/>
+        </MyDialog>
+        <MyDialog title="登录" :visible="loginDialogVisible" @close="loginDialogVisible=false">
+          <LoginForm @success="login"/>
+        </MyDialog>
       </div>
     </div>
   </div>
@@ -48,6 +48,7 @@
       methods:{
           login(user){
               this.signUpDialogVisible = false;
+              this.loginDialogVisible = false;
               this.$store.commit("setUser",user)
           },
           logout(){

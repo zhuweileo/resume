@@ -39,6 +39,7 @@
         user.setPassword(password);
         user.signUp().then(()=>{
             this.$emit("success",getAVUser())
+            this.errMsg = ""
         },(error)=>{
           this.errMsg = getErrorMessage(error)
         });
