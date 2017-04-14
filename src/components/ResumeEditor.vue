@@ -2,7 +2,7 @@
   <div id="resumeEditor">
     <nav>
       <ol>
-       <li v-for="(item,index) in resume.config"
+       <li v-for="(item,index) in resumeConfig"
            v-bind:class="{active:item.pro === selected}"
            @click="selected=item.pro">
          <svg class="icon">
@@ -12,7 +12,7 @@
       </ol>
     </nav>
     <ol class="panels">
-      <li v-for="item in resume.config" v-show="selected===item.pro">
+      <li v-for="item in resumeConfig" v-show="selected===item.pro">
           <div class="subitem" v-for="(subitem,index) in resume[item.pro]">
             <div class="labInp" v-for="(cell,index1) in subitem">
               <label :for="item.pro+index+index1">{{cell.name}}</label>
@@ -38,6 +38,9 @@
           },
           resume(){
               return this.$store.state.resume
+          },
+          resumeConfig(){
+              return this.$store.state.resumeConfig
           }
       },
       methods:{
