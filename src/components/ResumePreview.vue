@@ -2,10 +2,10 @@
   <div id="resumePreview">
     <section data-name="profile" v-if="resume.profile&&resume.profile.length>0">
       <h1>{{resume.profile[0][0].content}}</h1>
-      <h2>{{resume.profile[1][0].content}}</h2>
+      <h2>{{resume.profile[0][1].content}}</h2>
       <p>
-        <small>{{resume.profile[2][0].content}}</small>
-        <small>{{resume.profile[3][0].content}}</small>
+        <small>{{resume.profile[0][2].content}}</small>
+        <small>{{resume.profile[0][3].content}}</small>
       </p>
     </section>
     <section data-name="work history" v-if="resume['work history']&&resume['work history'].length>0">

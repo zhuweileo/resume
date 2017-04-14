@@ -20,6 +20,9 @@
               @input="edit(item.pro,index,index1,$event.target.value)"/>
             </div>
           </div>
+          <div v-if="item.pro!=='profile'">
+            <button @click="addone(item.pro)">添加</button>
+          </div>
       </li>
     </ol>
   </div>
@@ -51,6 +54,9 @@
                   index1:index1,
                   value:value
               })
+          },
+          addone(pro){
+              this.$store.commit("addItem",{pro})
           }
       }
   }

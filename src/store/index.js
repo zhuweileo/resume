@@ -10,12 +10,12 @@ export default new Vuex.Store({
       id: ""
     },
     resumeConfig: [
-      {pro: 'profile', icon: '#icon-id', itemLen: 1},
-      {pro: 'work history', icon: '#icon-work', itemLen: 2},
-      {pro: 'education', icon: '#icon-book', itemLen: 2},
-      {pro: 'projects', icon: '#icon-heart', itemLen: 2},
-      {pro: 'awards', icon: '#icon-cup', itemLen: 2},
-      {pro: 'contacts', icon: '#icon-phone', itemLen: 2}
+      {pro: 'profile', icon: '#icon-id', itemLen: 1,name:["姓名","职位","城市","生日"]},
+      {pro: 'work history', icon: '#icon-work', itemLen: 2,name:["公司","简介"]},
+      {pro: 'education', icon: '#icon-book', itemLen: 2,name:["学校","时间"]},
+      {pro: 'projects', icon: '#icon-heart', itemLen: 2,name:["项目名称","项目介绍"]},
+      {pro: 'awards', icon: '#icon-cup', itemLen: 2,name:["奖项名称","奖项介绍"]},
+      {pro: 'contacts', icon: '#icon-phone', itemLen: 2,name:["联系方式","联系号码"]}
     ],
     resume: {}
 
@@ -67,6 +67,15 @@ export default new Vuex.Store({
     initState(state,payload){
       state.resumeConfig.map((item)=>{
         Vue.set(state.resume,item.pro,[]);
+        let empty = [];
+        state.resume[item.pro].push(empty);
+        //利用模板造一个数据
+        item.name.map((name,index)=>{
+          // empty[index] = {};
+          Vue.set(empty,index,{});
+          Vue.set(empty[index],"name",name);
+          Vue.set(empty[index],"content","")
+        })
       });
       Object.assign(state,payload)
     },
@@ -85,6 +94,21 @@ export default new Vuex.Store({
     clearUser(state){
       state.user.id="";
       localStorage.setItem("state",JSON.stringify(state));
+    },
+    addItem(state,{pro}){
+      let empty = [];
+      state.resume[pro].push(empty);
+      //取出模板
+      let curPro = state.resumeConfig.filter((i)=>{
+        return i.pro === pro;
+      })[0];
+      //利用模板造一个数据
+      curPro.name.map((name,index)=>{
+        // empty[index] = {};
+        Vue.set(empty,index,{});
+        Vue.set(empty[index],"name",name);
+        Vue.set(empty[index],"content","")
+      })
     }
   }
 })
