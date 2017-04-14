@@ -1,5 +1,7 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
+import AV from "../lib/leancloud"
+import getAVUser from "../lib/getAVUser"
 
 Vue.use(Vuex)
 export default new Vuex.Store({
@@ -112,6 +114,37 @@ export default new Vuex.Store({
     },
     deleteItem(state,payload){
       state.resume[payload.pro].splice(payload.index,1);
+    },
+    setResumeId(state,{id}){
+      state.resume.id = id;
+    }
+  },
+  actions:{
+    saveResume({state,commit},payload){
+      var Resume = AV.Object.extend("Resume");
+      if(state.resume.id){
+
+      }else{
+        var resume = new Resume();
+        resume.set("profile",state.resume.profile);
+        resume.set("workHistory",state.resume["work history"]);
+        resume.set("education",state.resume.education);
+        resume.set("projects",state.resume.projects);
+        resume.set("awards",state.resume.awards);
+        resume.set("contacts",state.resume.contacts);
+        resume.set("ownerId",getAVUser().id);
+
+        var acl = new AV.ACL();
+        acl.setPublicReadAccess(true);
+        acl.setWriteAccess(AV.User.current(),true);
+
+        resume.setACL(acl);
+        resume.save().then(function(response){
+          commit("setResumeId",{id:response.id})
+        }).catch(function (error) {
+          console.log(error)
+        })
+      }
     }
   }
 })
