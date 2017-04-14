@@ -76,25 +76,5 @@
         color:#000;
       }
   }
-  .button{
-    width:72px;
-    height:32px;
-    border:none;
-    font-size:18px;
-    background: #ddd;
-    color:#222;
-    text-decoration:none;
-    display:inline-flex;
-    justify-content:center;
-    align-items:center;
-    /*vertical-align: middle;*/
-    &:hover{
-      box-shadow:1px 1px 1px 1px rgba(0,0,0,.5)
-    }
-    &.primary{//&代表父元素
-      background: #02af5f;
-      color:white;
-      margin-right:16px;
-    }
-  }
+
 </style>

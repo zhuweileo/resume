@@ -21,7 +21,7 @@
             </div>
           </div>
           <div v-if="item.pro!=='profile'">
-            <button @click="addone(item.pro)">添加</button>
+            <button class="button" @click="addone(item.pro)">添加</button>
           </div>
       </li>
     </ol>

@@ -37,7 +37,7 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss">
 #app {
   /*font-family: 'Avenir', Helvetica, Arial, sans-serif;*/
   /*-webkit-font-smoothing: antialiased;*/
@@ -61,5 +61,25 @@ export default {
     align-self:center;
     padding:0 16px;
   }
-
+  .button{
+    width:72px;
+    height:32px;
+    border:none;
+    font-size:18px;
+    background: #ddd;
+    color:#222;
+    text-decoration:none;
+    display:inline-flex;
+    justify-content:center;
+    align-items:center;
+    /*vertical-align: middle;*/
+    &:hover{
+       box-shadow:1px 1px 1px 1px rgba(0,0,0,.5)
+     }
+    &.primary{
+       background: #02af5f;
+       color:white;
+       margin-right:16px;
+     }
+  }
 </style>
