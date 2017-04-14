@@ -1,6 +1,6 @@
 <template>
   <div id="resumePreview">
-    <section data-name="profile" v-show="resume.profile">
+    <section data-name="profile" v-if="resume.profile&&resume.profile.length>0">
       <h1>{{resume.profile[0][0].content}}</h1>
       <h2>{{resume.profile[1][0].content}}</h2>
       <p>
@@ -8,7 +8,7 @@
         <small>{{resume.profile[3][0].content}}</small>
       </p>
     </section>
-    <section data-name="work history" v-show="resume['work history']">
+    <section data-name="work history" v-if="resume['work history']&&resume['work history'].length>0">
       <h2>工作经历</h2>
       <ol>
         <li v-for="item in resume['work history']">
@@ -17,7 +17,7 @@
         </li>
       </ol>
     </section>
-    <section data-name="education" v-show="resume.education">
+    <section data-name="education" v-if="resume.education&&resume.education.length>0">
       <h2>毕业院校</h2>
       <ol>
         <li v-for="item in resume.education">
@@ -27,7 +27,7 @@
         </li>
       </ol>
     </section>
-    <section data-name="projects" v-show="resume.projects">
+    <section data-name="projects" v-if="resume.projects&&resume.projects.length>0">
       <h2>项目经历</h2>
       <ol>
         <li v-for="item in resume.projects">
@@ -36,7 +36,7 @@
         </li>
       </ol>
     </section>
-    <section data-name="awards" v-show="resume.awards">
+    <section data-name="awards" v-if="resume.awards&&resume.awards.length>0">
       <h2>获奖情况</h2>
       <ol>
         <li v-for="item in resume.awards">
@@ -45,7 +45,7 @@
         </li>
       </ol>
     </section>
-    <section data-name="contacts" v-show="resume.contacts">
+    <section data-name="contacts" v-if="resume.contacts&&resume.contacts.length>0">
       <h2>联系方式</h2>
       <table>
         <tr v-for="item in resume.contacts">
