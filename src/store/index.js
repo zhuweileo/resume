@@ -109,6 +109,9 @@ export default new Vuex.Store({
         Vue.set(empty[index],"name",name);
         Vue.set(empty[index],"content","")
       })
+    },
+    deleteItem(state,payload){
+      state.resume[payload.pro].splice(payload.index,1);
     }
   }
 })

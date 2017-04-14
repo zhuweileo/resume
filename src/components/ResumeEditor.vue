@@ -14,6 +14,9 @@
     <ol class="panels">
       <li v-for="item in resumeConfig" v-show="selected===item.pro">
           <div class="subitem" v-for="(subitem,index) in resume[item.pro]">
+            <div v-if="item.pro!=='profile'">
+              <button class="button" @click="deleteOne(item.pro,index)">删除</button>
+            </div>
             <div class="labInp" v-for="(cell,index1) in subitem">
               <label :for="item.pro+index+index1">{{cell.name}}</label>
               <input type="text" :value="cell.content" :id="item.pro+index+index1"
@@ -21,7 +24,7 @@
             </div>
           </div>
           <div v-if="item.pro!=='profile'">
-            <button class="button" @click="addone(item.pro)">添加</button>
+            <button class="button" @click="addOne(item.pro)">添加</button>
           </div>
       </li>
     </ol>
@@ -55,8 +58,11 @@
                   value:value
               })
           },
-          addone(pro){
+          addOne(pro){
               this.$store.commit("addItem",{pro})
+          },
+          deleteOne(pro,index){
+              this.$store.commit("deleteItem",{pro,index})
           }
       }
   }
@@ -98,25 +104,10 @@
       }
     }
     .panels{
-      /*background:orange;*/
-      /*min-height:610px;*/
       flex-grow:1;
-      /*display:flex;*/
-      /*justify-content: center;*/
-      /*min-width:386px;*/
       li{
-        /*.subitem:nth-child(1){*/
-          /*margin-top:24px;*/
-        /*}*/
         margin:8px 24px;
         .labInp{
-          /*display:flex;*/
-          /*flex-direction:column;*/
-          /*justify-content: space-between;*/
-          /*margin-left:24px;*/
-          /*margin-right:24px;*/
-          /*margin-bottom:16px;*/
-
           label{
             display:block;
             font-size:20px;
