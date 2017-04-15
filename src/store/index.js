@@ -20,50 +20,6 @@ export default new Vuex.Store({
       {pro: 'contacts', icon: '#icon-phone', itemLen: 2,name:["联系方式","联系号码"]}
     ],
     resume: {}
-
-      // profile:[
-        // [{name:"姓名",content:"朱维"}],
-        // [{name:"职位",content:"前端工程师"}],
-        // [{name:"城市",content:"鹤壁"}],
-        // [{name:"生日",content:"1993-01-01"}]
-      // ],
-      // 'work history':[
-        // [{name:"公司",content:"百度"},
-        // {name:"简介",content:"我的第一份工作"}],
-        // [{name:"公司",content:"阿里"},
-        // {name:"简介",content:"我的第二份工作"}],
-        // [{name:"公司",content:"腾讯"},
-        // {name:"简介",content:"我的第三份工作"}]
-      // ],
-      // education:[
-        // [{name:'学校',content:'齐大'},
-        // {name:'时间',content:'2011-2014'}],
-        // [{name:'学校',content:'铃兰一中'},
-        // {name:'时间',content:'2011-2014'}],
-        // [{name:'学校',content:'乖宝宝小学'},
-        // {name:'时间',content:'2011-2014'}]
-      // ],
-      // projects:[
-        // [{name:'项目名称',content:'音乐播放器'},
-        // {name:'项目介绍',content:'广场舞助手'}],
-        // [{name:'项目名称',content:'todoList'},
-        // {name:'项目介绍',content:'可以记录你的要做的事情哦！'}],
-        // [{name:'项目名称',content:'简历生成器'},
-        // {name:'项目介绍',content:'可以制作简历哦'}]
-      // ],
-      // awards:[
-        // [{name:'奖项名称',content:'最会装逼奖'},
-        // {name:'奖项介绍',content:'多次装逼后自动添加'}],
-        // [{name:'奖项名称',content:'艾美奖'},
-        // {name:'奖项介绍',content:'获得第101届艾美奖'}],
-      // ],
-      // contacts:[
-        // [{name:'联系方式',content:'qq'},
-        // {name:'号码',content:'576XXXXXXX'}],
-        // [{name:'联系方式',content:'电话'},
-        // {name:'号码',content:'126XXXXXXX'}]
-      // ]
-
   },
   mutations: {
     initState(state,payload){
@@ -117,34 +73,49 @@ export default new Vuex.Store({
     },
     setResumeId(state,{id}){
       state.resume.id = id;
+    },
+    setResume(state,resume){
+      state.resumeConfig.map(({pro})=>{
+        Vue.set(state.resume,pro,resume[pro])
+        state.resume.id = resume.id;
+      })
     }
   },
   actions:{
     saveResume({state,commit},payload){
       var Resume = AV.Object.extend("Resume");
       if(state.resume.id){
-
-      }else{
-        var resume = new Resume();
-        resume.set("profile",state.resume.profile);
-        resume.set("workHistory",state.resume["work history"]);
-        resume.set("education",state.resume.education);
-        resume.set("projects",state.resume.projects);
-        resume.set("awards",state.resume.awards);
-        resume.set("contacts",state.resume.contacts);
-        resume.set("ownerId",getAVUser().id);
-
-        var acl = new AV.ACL();
-        acl.setPublicReadAccess(true);
-        acl.setWriteAccess(AV.User.current(),true);
-
-        resume.setACL(acl);
-        resume.save().then(function(response){
-          commit("setResumeId",{id:response.id})
-        }).catch(function (error) {
-          console.log(error)
-        })
+        resume.id = state.resume.id;
       }
+      var resume = new Resume();
+      resume.set("profile",state.resume.profile);
+      resume.set("workHistory",state.resume["work history"]);
+      resume.set("education",state.resume.education);
+      resume.set("projects",state.resume.projects);
+      resume.set("awards",state.resume.awards);
+      resume.set("contacts",state.resume.contacts);
+      resume.set("ownerId",getAVUser().id);
+
+      var acl = new AV.ACL();
+      acl.setPublicReadAccess(true);
+      acl.setWriteAccess(AV.User.current(),true);
+      resume.setACL(acl);
+      resume.save().then(function(response){
+        if(!state.resume.id){
+          commit("setResumeId",{id:response.id})
+        }
+      }).catch(function (error) {
+        console.log(error)
+      })
+    },
+    fetchResume({commit},payload){
+      var query = new AV.Query("Resume");
+      query.equalTo("ownerId",getAVUser().id)
+      query.first().then((resume)=>{
+        console.log("*****");
+        console.log(resume.attributes);
+        commit("setResume",{id:resume.id,...resume.attributes})
+      })
     }
   }
 })

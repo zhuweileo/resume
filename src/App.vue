@@ -31,8 +31,15 @@ export default {
       if(state){
           state = JSON.parse(state)
       }
-      this.$store.commit("initState",{});
-      this.$store.commit("setUser",getAVUser());
+      if(getAVUser().id){
+        this.$store.commit("setUser",getAVUser());
+        this.$store.dispatch("fetchResume").then(() => {
+          this.$store.commit("initState",state)
+        })
+      }else{
+        this.$store.commit("initState",{})
+      }
+
   }
 }
 </script>
