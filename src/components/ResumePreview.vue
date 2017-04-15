@@ -9,10 +9,10 @@
         <small>{{resume.profile[0][3].content}}</small>
       </p>
     </section>
-    <section data-name="work history" v-if="resume['work history']&&resume['work history'].length>0">
+    <section data-name="workHistory" v-if="resume.workHistory&&resume.workHistory.length>0">
       <h2>工作经历</h2>
       <ol>
-        <li v-for="item in resume['work history']">
+        <li v-for="item in resume.workHistory">
           <h3>{{item[0].content}}</h3>
           <p>{{item[1].content}}</p>
         </li>
@@ -91,7 +91,7 @@
     section[data-name="profile"]{
       >h1{margin: .1em 0; font-size: 4em;}
     }
-    section[data-name="work history"],
+    section[data-name="workHistory"],
     section[data-name="projects"],
     section[data-name="awards"]{
       li+li{margin-top:1em}

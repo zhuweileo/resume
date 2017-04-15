@@ -10,7 +10,7 @@
         <input type="password" required v-model="formData.password">
       </div>
       <div class="actions">
-        <input type="submit">
+        <input type="submit" value="登录">
         <span>{{errMsg}}</span>
       </div>
     </form>
@@ -38,6 +38,7 @@
               AV.User.logIn(username,password).then(()=>{
                   this.$emit("success",getAVUser());
                   this.errMsg="";
+                  this.$store.dispatch("fetchResume")
               },(error)=>{
                   this.errMsg = getErrorMessage(error);
               })

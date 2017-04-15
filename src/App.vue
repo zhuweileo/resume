@@ -27,14 +27,14 @@ export default {
   components: {Topbar,ResumeEditor,ResumePreview},
   created(){
       document.body.insertAdjacentHTML("afterbegin",icons);//引入svg图标
-      let state = localStorage.getItem("state");
-      if(state){
-          state = JSON.parse(state)
-      }
+//      let state = localStorage.getItem("state");
+//      if(state){
+//          state = JSON.parse(state)
+//      }
       if(getAVUser().id){
         this.$store.commit("setUser",getAVUser());
         this.$store.dispatch("fetchResume").then(() => {
-          this.$store.commit("initState",state)
+//          this.$store.commit("initState",state)
         })
       }else{
         this.$store.commit("initState",{})

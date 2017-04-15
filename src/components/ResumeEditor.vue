@@ -10,6 +10,9 @@
          </svg>
        </li>
       </ol>
+      <div>
+        <button class="button" @click="addOne(selected)">添加</button>
+      </div>
     </nav>
     <ol class="panels">
       <li v-for="item in resumeConfig" v-show="selected===item.pro">
@@ -59,6 +62,7 @@
               })
           },
           addOne(pro){
+              if(pro === "profile") return;
               this.$store.commit("addItem",{pro})
           },
           deleteOne(pro,index){

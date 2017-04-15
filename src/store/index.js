@@ -13,7 +13,7 @@ export default new Vuex.Store({
     },
     resumeConfig: [
       {pro: 'profile', icon: '#icon-id', itemLen: 1,name:["姓名","职位","城市","生日"]},
-      {pro: 'work history', icon: '#icon-work', itemLen: 2,name:["公司","简介"]},
+      {pro: 'workHistory', icon: '#icon-work', itemLen: 2,name:["公司","简介"]},
       {pro: 'education', icon: '#icon-book', itemLen: 2,name:["学校","时间"]},
       {pro: 'projects', icon: '#icon-heart', itemLen: 2,name:["项目名称","项目介绍"]},
       {pro: 'awards', icon: '#icon-cup', itemLen: 2,name:["奖项名称","奖项介绍"]},
@@ -83,13 +83,16 @@ export default new Vuex.Store({
   },
   actions:{
     saveResume({state,commit},payload){
+      if(!getAVUser().id) return console.log("未登录不能保存");
+
       var Resume = AV.Object.extend("Resume");
+      var resume = new Resume();
       if(state.resume.id){
         resume.id = state.resume.id;
       }
-      var resume = new Resume();
+
       resume.set("profile",state.resume.profile);
-      resume.set("workHistory",state.resume["work history"]);
+      resume.set("workHistory",state.resume.workHistory);
       resume.set("education",state.resume.education);
       resume.set("projects",state.resume.projects);
       resume.set("awards",state.resume.awards);
@@ -112,9 +115,13 @@ export default new Vuex.Store({
       var query = new AV.Query("Resume");
       query.equalTo("ownerId",getAVUser().id)
       query.first().then((resume)=>{
-        console.log("*****");
-        console.log(resume.attributes);
-        commit("setResume",{id:resume.id,...resume.attributes})
+        if(resume){
+          console.log("*****");
+          console.log(resume.attributes);
+          commit("setResume",{id:resume.id,...resume.attributes})
+        }else{
+          commit("initState",{})
+        }
       })
     }
   }
