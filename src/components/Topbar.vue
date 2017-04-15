@@ -54,6 +54,7 @@
           logout(){
               AV.User.logOut();
               this.$store.commit("clearUser");
+              this.$store.commit("initState",{});
           }
       }
   }
