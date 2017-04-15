@@ -39,19 +39,19 @@ export default new Vuex.Store({
     },
     switchTab(state,payload){
       state.selected = payload;
-      localStorage.setItem("state",JSON.stringify(state))
+      // localStorage.setItem("state",JSON.stringify(state))
     },
     writeResume(state,payload){
       state.resume[payload.pro][payload.index][payload.index1].content = payload.value;
-      localStorage.setItem("state",JSON.stringify(state))
+      // localStorage.setItem("state",JSON.stringify(state))
     },
     setUser(state,payload){
       Object.assign(state.user,payload);
-      localStorage.setItem("state",JSON.stringify(state));
+      // localStorage.setItem("state",JSON.stringify(state));
     },
     clearUser(state){
       state.user.id="";
-      localStorage.setItem("state",JSON.stringify(state));
+      // localStorage.setItem("state",JSON.stringify(state));
     },
     addItem(state,{pro}){
       let empty = [];
@@ -89,6 +89,7 @@ export default new Vuex.Store({
       var resume = new Resume();
       if(state.resume.id){
         resume.id = state.resume.id;
+        console.log(resume.id)
       }
 
       resume.set("profile",state.resume.profile);

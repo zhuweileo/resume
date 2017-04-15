@@ -22,21 +22,25 @@ import AV from "./lib/leancloud"
 import getAVUser from "./lib/getAVUser"
 
 export default {
-  name: 'app',
+  name: 'Resumer',
   store,
   components: {Topbar,ResumeEditor,ResumePreview},
-  created(){
+  created () {
       document.body.insertAdjacentHTML("afterbegin",icons);//引入svg图标
 //      let state = localStorage.getItem("state");
 //      if(state){
 //          state = JSON.parse(state)
 //      }
+      console.log("@@@@@@")
+      console.log(AV.User.current());
+      console.log("!!!!!")
+      console.log(getAVUser());
       if(getAVUser().id){
+        //之前有登录的用户，就将登录的用户保存，并获取他的简历
         this.$store.commit("setUser",getAVUser());
-        this.$store.dispatch("fetchResume").then(() => {
-//          this.$store.commit("initState",state)
-        })
+        this.$store.dispatch("fetchResume");
       }else{
+        //如果没有已登录用户，就初始化一个空白简历
         this.$store.commit("initState",{})
       }
 
