@@ -1,6 +1,6 @@
 <template>
-    <div class="wrapper" v-show="visible">
-      <div class="dialog">
+    <div class="wrapper" v-show="visible" @click="close">
+      <div class="dialog" @click.stop="">
         <header>{{title}}
           <span class="close" @click="close">X</span>
         </header>

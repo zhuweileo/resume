@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="8d1dde0c-0329-4bf3-9c42-e44861ed31d4" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/MyDialog.vue" afterPath="$PROJECT_DIR$/src/components/MyDialog.vue" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/ResumeEditor.vue" afterPath="$PROJECT_DIR$/src/components/ResumeEditor.vue" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -42,7 +41,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ResumeEditor.vue" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ResumeEditor.vue" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/ResumeEditor.vue">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="202">
@@ -88,11 +87,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MyDialog.vue" pinned="false" current-in-tab="false">
+      <file leaf-file-name="MyDialog.vue" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/components/MyDialog.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="288">
-              <caret line="48" column="21" lean-forward="false" selection-start-line="48" selection-start-column="21" selection-end-line="48" selection-end-column="21" />
+            <state relative-caret-position="32">
+              <caret line="1" column="48" lean-forward="false" selection-start-line="1" selection-start-column="48" selection-end-line="1" selection-end-column="48" />
               <folding />
             </state>
           </provider>
@@ -155,8 +154,8 @@
         <option value="$PROJECT_DIR$/src/components/LoginForm.vue" />
         <option value="$PROJECT_DIR$/src/components/SignUpForm.vue" />
         <option value="$PROJECT_DIR$/src/App.vue" />
-        <option value="$PROJECT_DIR$/src/components/MyDialog.vue" />
         <option value="$PROJECT_DIR$/src/components/ResumeEditor.vue" />
+        <option value="$PROJECT_DIR$/src/components/MyDialog.vue" />
       </list>
     </option>
   </component>
@@ -371,12 +370,12 @@
       <workItem from="1492045078757" duration="22964000" />
       <workItem from="1492134094889" duration="25725000" />
       <workItem from="1492222760636" duration="26132000" />
-      <workItem from="1492310750802" duration="9833000" />
+      <workItem from="1492310750802" duration="10245000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="224623000" />
+    <option name="totallyTimeSpent" value="225035000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -780,14 +779,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/MyDialog.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="48" column="21" lean-forward="false" selection-start-line="48" selection-start-column="21" selection-end-line="48" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/LoginForm.vue">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="490">
@@ -833,6 +824,14 @@
           <folding>
             <element signature="n#script#0;n#!!top" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/MyDialog.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="32">
+          <caret line="1" column="48" lean-forward="false" selection-start-line="1" selection-start-column="48" selection-end-line="1" selection-end-column="48" />
+          <folding />
         </state>
       </provider>
     </entry>
