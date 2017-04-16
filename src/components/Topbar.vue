@@ -1,7 +1,10 @@
 <template>
   <div id="topbar">
     <div class="wrapper">
-      <span class="logo">Resumer</span>
+      <div class="logo-save">
+        <span class="logo">Resumer</span>
+        <span class="iconfont icon-Icon-baocun" @click="save"></span>
+      </div>
       <div class="actions">
         <div v-if="logined" class="useractions">
           <span>你好，{{user.username}}!</span>
@@ -55,6 +58,9 @@
               AV.User.logOut();
               this.$store.commit("clearUser");
               this.$store.commit("initState",{});
+          },
+          save(){
+            this.$store.dispatch("saveResume")
           }
       }
   }
@@ -76,6 +82,16 @@
         font-size:24px;
         color:#000;
       }
+    .icon-Icon-baocun{
+      color:#000;
+      font-size:20px;
+      &:before {
+        content: "\e602";
+        margin-left:20px;
+        cursor:pointer;
+      }
+      &:hover{color:rgba(0,0,0,.5)}
+    }
   }
 
 </style>

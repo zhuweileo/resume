@@ -1,6 +1,5 @@
 <template>
   <div id="resumePreview">
-    <button class="button" @click="save">保存</button>
     <section data-name="profile" v-if="resume.profile&&resume.profile.length>0">
       <h1>{{resume.profile[0][0].content}}</h1>
       <h2>{{resume.profile[0][1].content}}</h2>
@@ -66,21 +65,20 @@
           }
       },
       methods:{
-          save(){
-              this.$store.dispatch("saveResume")
-          }
+
       }
   }
 </script>
 <style lang="scss">
   #resumePreview{
-    color:yellowgreen;
+    color:#222;
     width: 65%;
     box-shadow:0 1px 3px 0 rgba(0,0,0,0.25);
-    background: #444;
+    background: #fff;
     padding:2em;
     line-height:1.2;
     overflow:auto;
+    h1,h2,h3{font-weight:normal;}
     section + section{ margin-top: 2em; }
     p{
       white-space:pre-line;//保留文本中的换行符

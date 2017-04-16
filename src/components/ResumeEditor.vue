@@ -127,8 +127,8 @@
               height:30px;
               width:30px;
               border-radius:50%;
-              background:#02af5f;
-              color:white;
+              background:#ddd;
+              color:#fff;
               display:flex;
               justify-content: center;
               align-items: center;
