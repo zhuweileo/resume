@@ -10,25 +10,21 @@
          </svg>
        </li>
       </ol>
-      <div>
-        <button class="button" @click="addOne(selected)">添加</button>
-      </div>
     </nav>
     <ol class="panels">
       <li v-for="item in resumeConfig" v-show="selected===item.pro">
           <div class="subitem" v-for="(subitem,index) in resume[item.pro]">
-            <div v-if="item.pro!=='profile'">
-              <button class="button" @click="deleteOne(item.pro,index)">删除</button>
-            </div>
             <div class="labInp" v-for="(cell,index1) in subitem">
-              <label :for="item.pro+index+index1">{{cell.name}}</label>
+              <header>
+                <label :for="item.pro+index+index1">{{cell.name}}</label>
+                <span v-if="index1===0&&item.pro!=='profile'" @click="deleteOne(item.pro,index)">X</span>
+              </header>
               <input type="text" :value="cell.content" :id="item.pro+index+index1"
               @input="edit(item.pro,index,index1,$event.target.value)"/>
             </div>
+            <hr v-if="item.pro!=='profile'">
           </div>
-          <div v-if="item.pro!=='profile'">
-            <button class="button" @click="addOne(item.pro)">添加</button>
-          </div>
+          <button class="button add" @click="addOne(selected)" v-if="item.pro!=='profile'">添加</button>
       </li>
     </ol>
   </div>
@@ -111,13 +107,32 @@
       flex-grow:1;
       li{
         margin:8px 24px;
+        .add{
+          width:100%
+        }
         .labInp{
-          label{
-            display:block;
-            font-size:20px;
-            color:#333333;
-            letter-spacing:0;
+          header{
+            display:flex;
+            justify-content: space-between;
             padding:16px 0;
+            label{
+              display:block;
+              font-size:20px;
+              color:#333333;
+              letter-spacing:0;
+            }
+            span{
+              align-self:center;
+              cursor:pointer;
+              height:30px;
+              width:30px;
+              border-radius:50%;
+              background:#02af5f;
+              color:white;
+              display:flex;
+              justify-content: center;
+              align-items: center;
+            }
           }
           input{
             background:#ffffff;
@@ -131,8 +146,12 @@
       }
       li:nth-child(n+2){
         .subitem{
-          border-bottom:1px solid #ccc;
-          padding-bottom:10px;
+          hr{
+            margin:20px 0;
+            border:none;
+            height:1px;
+            background-color: #ddd;
+          }
         }
       }
     }

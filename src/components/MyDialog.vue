@@ -45,6 +45,9 @@
       justify-content: space-between;
       background: #02af5f;
       color:white;
+      span{
+        cursor:pointer;
+      }
     }
     > main{
       padding: 16px;
