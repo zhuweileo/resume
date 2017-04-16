@@ -1,15 +1,15 @@
 <template>
   <div>
     <form @submit.prevent="signUp">
-      <div class="raw">
+      <div class="row">
         <label for="">用户名</label>
         <input type="text" v-model="formData.username" required>
       </div>
-      <div class="raw">
-        <label for="">密码</label>
+      <div class="row">
+        <label for="">密&emsp;码</label>
         <input type="password" v-model="formData.password" required>
       </div>
-      <div class="action">
+      <div class="actions">
         <input type="submit" value="注册">
         <span class="errMsg">{{errMsg}}</span>
       </div>

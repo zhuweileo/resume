@@ -38,10 +38,13 @@
     background: white;
     min-height: 4em;
     min-width: 10em;
+    font-size:20px;
     > header{
-      padding: 16px;
+      padding: 10px 16px;
       display: flex;
       justify-content: space-between;
+      background: #02af5f;
+      color:white;
     }
     > main{
       padding: 16px;

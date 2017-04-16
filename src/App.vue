@@ -93,4 +93,33 @@ export default {
        margin-right:16px;
      }
   }
+form{
+  .row{
+    margin-top:20px;
+    margin-bottom:20px;
+    display:flex;
+
+    label{
+      font-size:20px;
+    }
+    input{
+      box-shadow:inset 0px 1px 3px 0px rgba(0,0,0,.25);
+      border:none;
+      font-size:18px;
+    }
+  }
+  .actions{
+    input[type="submit"]{
+      font-size:20px;
+      background: #ddd;
+      color:#222;
+      display:block;
+      width:100%;
+      border:none;
+      &:hover{
+        box-shadow:1px 1px 1px 1px rgba(0,0,0,0.5);
+      }
+    }
+  }
+}
 </style>
