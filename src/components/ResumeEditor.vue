@@ -1,6 +1,7 @@
 <template>
   <div id="resumeEditor">
-    <nav>
+    <div class="editor-wrapper">
+      <nav>
       <ol>
        <li v-for="(item,index) in resumeConfig"
            v-bind:class="{active:item.pro === selected}"
@@ -27,6 +28,8 @@
           <button class="button add" @click="addOne(selected)" v-if="item.pro!=='profile'">添加</button>
       </li>
     </ol>
+    </div>
+    
   </div>
 </template>
 <script>
@@ -76,13 +79,17 @@
     background: white;
     margin-right:16px;
     width:35%;
-    display:flex;
-    flex-direction:row;
+    /*display:flex;
+    flex-direction:row;*/
     overflow:auto;
+    .editor-wrapper{
+      display:flex;
+      min-height:100%;
+    }
     nav{
       background: #000;
       /*width:80px;*/
-      min-height:600px;
+      /*min-height:100%;*/
       > ol > li{
         width:80px;
         height: 48px;
@@ -105,6 +112,7 @@
     }
     .panels{
       flex-grow:1;
+      /*min-height:100%;*/
       li{
         margin:8px 24px;
         .add{
