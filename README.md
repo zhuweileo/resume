@@ -22,7 +22,7 @@ https://zhuweileo.github.io/resume/dist
 
    保存按钮在左上角
 
-## 代码使用方法
+# 代码使用方法
 
 ``` bash
 #克隆仓库到本地
